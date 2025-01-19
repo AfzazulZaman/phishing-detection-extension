@@ -1,0 +1,10 @@
+{
+    "name": "phishing thief",
+    "description": "Base Level Extension",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+      "default_popup": "hello.htm",
+      "default_icon": "logo.png"
+    }
+  }
