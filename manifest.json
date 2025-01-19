@@ -1,10 +1,38 @@
 {
-    "name": "phishing thief",
-    "description": "Base Level Extension",
-    "version": "1.0",
     "manifest_version": 3,
+    "name": "Phishing Thief",
+    "description": "Automatically detects phishing websites and gives a warning.",
+    "version": "1.0",
+    "permissions": [
+      "tabs",
+      "storage",
+      "scripting",
+      "activeTab"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
     "action": {
-      "default_popup": "hello.htm",
-      "default_icon": "logo.png"
-    }
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "logo.png",
+        "48": "logo.png",
+        "128": "logo.png"
+      }
+    },
+    "icons": {
+      "16": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
   }
+  
